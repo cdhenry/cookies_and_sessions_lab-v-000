@@ -1,4 +1,5 @@
 <p>
+<<<<<<< HEAD
   <%= form_tag({controller: 'products', action: 'add', method: 'post'}) do %>
     <%= label_tag :product, "Product" %>
     <%= text_field_tag :product %>
@@ -10,3 +11,18 @@
     <li><%= product %></li>
   <% end %>
 </ul>
+=======
+  <%= form_tag(add_path(@product)) do %>
+    <%= label_tag :product, "Product" %>
+    <%= text_field_tag :product %>
+    <%= submit_tag "add to cart", :class => 'btn btn-primary' %>
+  <% end %>
+</p>
+<% if !@products.nil? %>
+  <ul>
+    <% @products.each do |product| %>
+      <li><%= product.name %></li>
+    <% end %>
+  </ul>
+<% end %>
+>>>>>>> bf3af0dc07d890c511fdbe0e64ad0e541d01a097
